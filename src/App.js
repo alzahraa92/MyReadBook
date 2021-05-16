@@ -12,9 +12,7 @@ class BooksApp extends React.Component {
   render() {
     return (
       <div className="app">
-      <provider>
         <Router>
-      <div>
         <ul className="listNav">
           <li className="itemListNav">
             <NavLink to="/">Home</NavLink>
@@ -32,9 +30,7 @@ class BooksApp extends React.Component {
           <Home />
           </Route> 
         </Switch>
-      </div>
     </Router>
-      </provider>
       </div>
     )
   }
