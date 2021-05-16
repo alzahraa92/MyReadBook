@@ -25,7 +25,6 @@ class Shelf extends Component{
   }
   render() {
     const { allBooks } = this.state
-
     const shelfLists = [
         {
             id:1,
