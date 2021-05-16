@@ -21,7 +21,6 @@ class BooksApp extends React.Component {
             <NavLink to="/Search">Search</NavLink>
           </li>
         </ul>
-
         <Switch>
           <Route path="/Search" >
             <Search />
