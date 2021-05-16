@@ -15,17 +15,14 @@ class Shelf extends Component{
 
   bookUpdate = (book, shelfName) => {
     const { allBooks } = this.state
-	const updateId = allBooks.findIndex(b => b.id === book.id)
+	  const updateId = allBooks.findIndex(b => b.id === book.id)
     const updateBook = allBooks[updateId]
     updateBook.shelf = shelfName
-
     this.setState({
       allBooks: [...allBooks.slice(0, updateId), updateBook, ...allBooks.slice(updateId + 1)]
     })
-
     BooksAPI.update(book, shelfName)
   }
-
   render() {
     const { allBooks } = this.state
 
