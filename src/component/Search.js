@@ -28,7 +28,6 @@ class Search extends Component{
         const updateId = books.findIndex(b => b.id === book.id)
         const updateBook = books[updateId]
         updateBook.shelf = shelfName
-
         this.setState({
         books: [...books.slice(0, updateId), updateBook, ...books.slice(updateId + 1)]
         })
