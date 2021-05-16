@@ -29,5 +29,4 @@ ShelfList.propTypes = {
   books: PropTypes.array,
   onBookUpdate: PropTypes.func
 }
-
 export default ShelfList
