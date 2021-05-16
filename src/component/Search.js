@@ -54,7 +54,6 @@ class Search extends Component{
   }
   }
   render(){
-    const { books, query } = this.state
     return( 
       <div className="search-books">
             <div className="search-books-bar">
@@ -65,12 +64,12 @@ class Search extends Component{
                     debounceTimeout={300}
                     onChange={(e) => this.searchBooks(e.target.value)}
                     />
-                <input type="text" placeholder="Search by title or author" onChange={this.handleChange} value={query}/>
+                <input type="text" placeholder="Search by title or author" onChange={this.handleChange} value={this.state.query}/>
               </div>
             </div>
             <div className="search-books-results">
               <ol className="books-grid">
-              {books.length > 0 ? (books.map((book, id) => (
+              {this.state.books.length > 0 ? (this.state.books.map((book, id) => (
               <Book
                 key={id}
                 book={book}
