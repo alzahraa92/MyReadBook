@@ -7,7 +7,6 @@ class ShelfList extends Component {
     return (
       <div className="bookshelf">
         <h1 className="bookshelf-title">{title}</h1>
-      	<hr />
         <div className="bookshelf-books">
       	  <ol className="books-grid">
             {books.map((book, id) => (
