@@ -9,13 +9,14 @@ class ShelfList extends Component {
         <h1 className="bookshelf-title">{title}</h1>
         <div className="bookshelf-books">
       	  <ol className="books-grid">
-            {books.map((book, id) => (
+            {books.length > 0 ? ( books.map((book, id) => (
               <Book
                 key={id}
                 book={book}
                 onBookUpdate={onBookUpdate}
       		  />
-            ))
+            )))
+  		      	: (<p>There are not books here </p>)
             }
   		  </ol>
         </div>
