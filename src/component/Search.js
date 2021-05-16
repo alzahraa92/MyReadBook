@@ -69,15 +69,21 @@ class Search extends Component{
             </div>
             <div className="search-books-results">
               <ol className="books-grid">
-              {this.state.books.length > 0 ? (this.state.books.map((book, id) => (
-              <Book
-                key={id}
-                book={book}
-                onBookUpdate={this.onBookUpdate}
-      		  />
-            )))
-  			: ( this.state.query.length === 0 ? (<p>No query entered</p>) : (<p>No Results Found</p>) )
-            }  
+              {this.state.books.length >0 ?( this.state.books.map((book) =>{
+                  const foundBook=this.state.books.find(searchBook =>searchBook.id === book.id)
+                  if (foundBook) {
+                    book.shelf = foundBook.shelf
+                  }else{
+                    book.shelf = 'none'
+                  }
+                  return  <Book
+                  key={book.id}
+                  book={book}
+                  onBookUpdate={this.onBookUpdate}
+              />
+                }))
+                : ( this.state.query.length === 0 ? (<p>No query entered</p>) : (<p>No Results Found</p>) )
+              }
               </ol>
             </div>
           </div>
