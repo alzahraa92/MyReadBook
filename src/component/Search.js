@@ -32,7 +32,7 @@ class Search extends Component{
         books: [...books.slice(0, updateId), updateBook, ...books.slice(updateId + 1)]
         })
     }
-  handleChange= async e =>{
+  onHandleChange= async e =>{
     try{
       const query = e.target.value
       this.setState({query})
@@ -64,7 +64,7 @@ class Search extends Component{
                     debounceTimeout={300}
                     onChange={(e) => this.searchBooks(e.target.value)}
                     />
-                <input type="text" placeholder="Search by title or author" onChange={this.handleChange} value={this.state.query}/>
+                <input type="text" placeholder="Search by title or author" onChange={this.onHandleChange} value={this.state.query}/>
               </div>
             </div>
             <div className="search-books-results">
