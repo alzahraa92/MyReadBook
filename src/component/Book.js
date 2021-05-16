@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types'
 class Book extends Component{
   render(){
-    const {book, bookUpdate} = this.props
+    const {book, onBookUpdate} = this.props
     return( <div>
                 <li>
                   <div className="book">
@@ -10,7 +10,7 @@ class Book extends Component{
                       <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${
                         this.props.book.imageLinks ? this.props.book.imageLinks.thumbnail :""})` }}></div>
                       <div className="book-shelf-changer">
-                        <select value={book.shelf} onChange={e => bookUpdate(book, e.target.value)}>
+                        <select value={book.shelf} onChange={e => onBookUpdate(book, e.target.value)}>
                         <option value="moveTo" disabled>Move to...</option>
                         <option value="currentlyReading">Currently Reading</option>
                         <option value="wantToRead">Want to Read</option>
@@ -28,6 +28,6 @@ class Book extends Component{
 }
 Book.propTypes = {
   book: PropTypes.object.isRequired,
-  bookUpdate: PropTypes.func
+  onBookUpdate: PropTypes.func
 }
 export default Book

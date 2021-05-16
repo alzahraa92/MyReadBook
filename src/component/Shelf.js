@@ -13,7 +13,7 @@ class Shelf extends Component{
 	  })
   }
 
-  bookUpdate = (book, shelfName) => {
+  onBookUpdate = (book, shelfName) => {
     const { allBooks } = this.state
 	  const updateId = allBooks.findIndex(b => b.id === book.id)
     const updateBook = allBooks[updateId]
@@ -50,7 +50,7 @@ class Shelf extends Component{
                 key={id}
                 title={shelf.name}
                 books={shelf.books}
-                bookUpdate={this.bookUpdate}/>
+                onBookUpdate={this.onBookUpdate}/>
             ))}
           </div>
      )

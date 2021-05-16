@@ -22,7 +22,7 @@ class Search extends Component{
         this.setState({ query })
     }
 
-  bookUpdate = (book, shelfName) => {
+  onBookUpdate = (book, shelfName) => {
         BooksAPI.update(book, shelfName)
         const { books } = this.state
         const updateId = books.findIndex(b => b.id === book.id)
@@ -74,7 +74,7 @@ class Search extends Component{
               <Book
                 key={id}
                 book={book}
-                bookUpdate={this.bookUpdate}
+                onBookUpdate={this.onBookUpdate}
       		  />
             )))
   			: ( this.state.query.length === 0 ? (<p>No query entered</p>) : (<p>No Results Found</p>) )
