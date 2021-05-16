@@ -21,7 +21,6 @@ class Search extends Component{
     updateQuery(query) {
         this.setState({ query })
     }
-
   onBookUpdate = (book, shelfName) => {
         BooksAPI.update(book, shelfName)
         const { books } = this.state
