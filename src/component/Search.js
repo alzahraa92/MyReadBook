@@ -70,9 +70,9 @@ class Search extends Component{
             <div className="search-books-results">
               <ol className="books-grid">
               {this.state.books.length >0 && this.state.books.map((book) =>{
-                  const foundBook=this.state.books.find(searchBook =>searchBook.id === book.id)
-                  if (foundBook) {
-                    book.shelf = foundBook.shelf
+                  const shelfName=this.state.books.find(onBookUpdate =>onBookUpdate.id === book.id)
+                  if (shelfName) {
+                    book.shelf = shelfName.shelf
                   }else{
                     book.shelf = 'none'
                   }
