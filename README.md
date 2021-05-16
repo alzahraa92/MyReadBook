@@ -100,3 +100,6 @@ search(query, maxResults)
 4-html
 5-React
 6-JSX
+## Note
+this note for search page 
+![Website screenshot](./src/icons/Screenshot.png)
