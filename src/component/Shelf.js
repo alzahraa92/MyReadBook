@@ -29,7 +29,7 @@ class Shelf extends Component{
   render() {
     const { allBooks } = this.state
 
-    const shelfRows = [
+    const shelfLists = [
         {
             id:1,
             name: 'Current Reading',
@@ -48,7 +48,7 @@ class Shelf extends Component{
     ]
     return(
           <div>
-              {shelfRows && shelfRows.map((shelf, id) => (
+              {shelfLists && shelfLists.map((shelf, id) => (
               <ShelfList
                 key={id}
                 title={shelf.name}

@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Book from './Book'
-
 class ShelfList extends Component {
   render() {
     const {title, books, bookUpdate} = this.props
@@ -25,7 +24,6 @@ class ShelfList extends Component {
     )
   }
 }
-
 ShelfList.propTypes = {
   title: PropTypes.string.isRequired,
   books: PropTypes.array,
